@@ -1,11 +1,17 @@
-import { useState } from "react";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import { Navbar } from "./components/Navbar";
+import { Main } from "./components/Main";
+import { Details } from "./components/Details";
+
 function App() {
   return (
-    <>
-      <Navbar />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/details" element={<Details />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
